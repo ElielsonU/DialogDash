@@ -1,0 +1,50 @@
+:root {
+  --main-font: "Inter";
+  --monospaced-font: monospace;
+  --default-font: arial;
+  --light-gray: #F6F6F6;
+  --light-blue: #007AFF;
+  --white: #FeFeFe;
+  --beige: #F5D7BE;
+  --black: #0e0e0e;
+  --blue: #0032FC;
+  --gray: #979797;
+}
+
+body {
+  color: var(--black);
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  font-size: 16px;
+  font-family: var(--monospaced-font);
+  text-decoration: none;
+  color: var(--gray);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.site-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site-header {
+  padding: 15px 13px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: var(--light-gray);
+  height: 50px;
+  
+  > h2 {
+    font-size: 17px;
+    font-family: var(--main-font);
+    font-weight: 700;
+  }
+}

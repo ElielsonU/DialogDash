@@ -1,0 +1,18 @@
+{% extends 'base/auth.html' %}
+
+{% block 'header' %}
+  <h2>Cadastrar</h2>
+{% endblock %}
+
+{% block 'details' %}
+Insira seus dados para a realização do cadastro
+{% endblock %} 
+
+{% block 'inputs' %}
+  {% for input in form %}
+    <label>
+      <input type="text" placeholder="">
+    </label>
+  {% endfor %}
+  
+{% endblock %}

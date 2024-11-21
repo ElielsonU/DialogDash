@@ -1,0 +1,23 @@
+{% extends 'base/auth.html' %} {% block 'header' %}
+<a href="{% url 'user.signup' %}">Cancelar</a>
+{% endblock %} 
+
+{% block 'details' %}
+  Insira seus dados para a realização do login
+{% endblock %} 
+
+{% block 'inputs' %}
+<label>
+  <input type="email" name="email" placeholder="Email" required />
+</label>
+<label>
+  <input
+    type="password"
+    name="password"
+    placeholder="Senha"
+    minlength="8"
+    required
+  />
+  <a href="#">Esqueceu sua senha?</a>
+</label>
+{% endblock %}

@@ -1,0 +1,18 @@
+:root {
+  --light-gray: #F6F6F6;
+  --dark-blue: #0032FC;
+  --white: #FeFeFe;
+  --beige: #F5D7BE;
+  --black: #0e0e0e;
+  --blue: #007AFF;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.site-header {
+  background-color: var(--beige);
+  height: 80px;
+}

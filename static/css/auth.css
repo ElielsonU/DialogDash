@@ -1,0 +1,86 @@
+.site-main {
+  > form {
+    width: 100%;
+    > button {
+      display: flex;
+      align-items: center;
+      color: var(--light-blue);
+      background: none;
+      font-size: 17px;
+      font-family: var(--monospaced-font);
+      padding: 12px 15px;
+      width: inherit;
+      text-align: left;
+      border: 1px solid var(--gray);
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 0;
+    }
+
+    > button::before {
+      content: '';
+      display: block;
+    }
+
+    > button::after {
+      content: '';
+      display: block;
+      border-bottom: 2.5px solid;
+      border-right: 2.5px solid;
+      color: var(--gray);
+      height: 7px;
+      width: 7px;
+      position: absolute;
+      right: 15px;
+      rotate: -45deg;
+    }
+  }
+
+  > p {
+    text-align: center;
+    font-family: var(--monospaced-font);
+    font-size: 15px;
+    margin: 30px 0;
+  }
+}
+
+.inputs-field {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  > label {
+    position: relative;
+    width: inherit;
+    text-align: end;
+    margin-bottom: 45px;
+    border-top: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray);
+
+    > input {
+      width: 300px;
+      height: 40px;
+      font-size: 18px;
+      font-family: var(--monospaced-font);
+      border: 1px solid var(--gray);
+      border-bottom: 0;
+      border-right: 0;
+    }
+
+    > a {
+      position: absolute;
+      right: 0;
+      bottom: -35px;
+      right: 15px;
+      font-size: 14px;
+    }
+  }
+
+  > label::before {
+    content: '';
+    display: block;
+    width: 16px;
+    border-top: 1px solid var(--white);
+    position: absolute;
+    top: -1px;
+  }
+}
