@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class User(AbstractUser):
+  email = models.EmailField(blank=False, null=False, unique=True)
   dark_mode = models.BooleanField(default=False)
   wallpaper = models.ImageField(blank=True, null=True)
 
