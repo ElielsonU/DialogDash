@@ -9,7 +9,7 @@ class UserForm(ModelForm):
     widgets = {
       'username': TextInput(attrs={ 'placeholder': 'Nome de usuário' }),
       'email': TextInput(attrs={ 'placeholder': 'Email' }),
-      'password': TextInput(attrs={ 'placeholder': 'Senha' }),
+      'password': PasswordInput(attrs={ 'placeholder': 'Senha' }),
     }
 
   def clean(self):

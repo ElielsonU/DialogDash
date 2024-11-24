@@ -1,11 +1,12 @@
 {% extends 'base/auth.html' %}
 
 {% block 'header' %}
+  <a href="{% url 'user.login' %}">Conecte-se</a>
   <h2>Cadastrar</h2>
 {% endblock %}
 
 {% block 'details' %}
-Insira seus dados para a realização do cadastro
+  Insira seus dados para a realização do <strong>cadastro</strong>
 {% endblock %} 
 
 {% block 'inputs' %}

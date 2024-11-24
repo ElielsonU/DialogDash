@@ -1,10 +1,11 @@
 {% extends 'base/auth.html' %} {% block 'header' %}
-<a href="{% url 'user.signup' %}">Cancelar</a>
+<a href="{% url 'user.signup' %}">Cadastre-se</a>
+<h2>Conectar</h2>
 {% endblock %} 
 
 {% block 'details' %}
-  Insira seus dados para a realização do login
-{% endblock %} 
+  Insira seus dados para se <strong>conectar</strong>
+{% endblock %}
 
 {% block 'inputs' %}
 <label>

@@ -6,15 +6,11 @@ from . import forms, models
 
 # Create your views here.
 
-def index(request):
-    return HttpResponse("dasdasdas")
-
 def login_view(request):
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
         user = models.User.objects.get(email=email)
-
         if user is not None and user.check_password(password):
             login(request, user)
             return redirect('chat')
@@ -28,6 +24,11 @@ def signup_view(request):
     if request.method == 'POST':
         form = forms.UserForm(request.POST)
         if form.is_valid():
-            form.save()
-            return login_view(request)
+            user = form.save()
+            login(request, user)
+            return redirect('chat')
     return render(request, 'html/signup.html', { 'form': form })
+
+def logout_view(request):
+    logout(request)
+    return redirect('user.login')

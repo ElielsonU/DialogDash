@@ -1,8 +1,14 @@
+.site-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .site-main {
   > form {
     width: 100%;
     > button {
       display: flex;
+      position: relative;
       align-items: center;
       color: var(--light-blue);
       background: none;
@@ -79,7 +85,7 @@
     content: '';
     display: block;
     width: 16px;
-    border-top: 1px solid var(--white);
+    border-top: 3px solid var(--white);
     position: absolute;
     top: -1px;
   }

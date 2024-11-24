@@ -1,0 +1,37 @@
+.site-header, .site-main {
+  font-family: var(--monospaced-font);
+  justify-content: center;
+  background-color: var(--light-brown);
+  border: 0;
+  
+  * {
+    text-decoration: underline;
+    color: var(--white);
+  }
+}
+
+.site-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 50px;
+
+  .logo {
+    mask-size: contain;
+    mask-image: url(/static/imgs/logo.svg);
+    mask-repeat: no-repeat;
+    background-color: var(--brown);
+    width: 75px;
+    height: 100px;
+  }
+
+  .text {
+    mask-size: contain;
+    mask-image: url(/static/imgs/dialog-dash.svg);
+    mask-repeat: no-repeat;
+    background-color: var(--white);
+    width: 200px;
+    height: 100px;
+  }
+}
