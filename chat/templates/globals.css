@@ -1,0 +1,38 @@
+:root {
+  --main-font: "Inter";
+  --monospaced-font: monospace;
+  --default-font: arial;
+  --light-gray: #F6F6F6;
+  --dark-blue: #0032FC;
+  --white: #FeFeFe;
+  --beige: #F5D7BE;
+  --black: #0e0e0e;
+  --blue: #007AFF;
+}
+
+body {
+  color: var(--black);
+  padding: 0;
+  margin: 0;
+}
+
+.site-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site-header {
+  padding: 15px 13px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: var(--light-gray);
+  height: 50px;
+  
+  > h2 {
+    font-size: 17px;
+    font-family: var(--main);
+    font-weight: 700;
+  }
+}
