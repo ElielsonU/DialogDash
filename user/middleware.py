@@ -9,16 +9,12 @@ class AuthMiddleware:
         self.get_response = get_response
 
     def __call__(self, request: HttpRequest):
-        if request.path not in auth_paths:
-            if not request.user.is_authenticated:
-                return redirect(reverse('user.login'))
-            response: HttpResponse = self.get_response(request)
-            return response
-        
         if request.user.is_authenticated:
-            return redirect(reverse('chat'))
-        
-        return self.get_response(request)
+            if request.path in auth_paths:
+                return redirect('index')
+        elif request.path not in auth_paths:
+            return redirect('usuarios:login')
+        return self.get_response(request)        
 
     def process_response(self, request: HttpRequest, response: HttpResponse):
         return response
