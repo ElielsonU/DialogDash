@@ -1,15 +1,9 @@
-{% extends 'base/base.html' %}
+{% extends 'base/loader.html' %}
 {% load static %}
-
-{% block 'head' %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
-{% endblock %}
 
 {% block 'header' %}
   <h2><a href="{% url 'user.logout' %}">Desconectar-se</a></h2>
 {% endblock %}
 
-{% block 'main' %}
-  <i class="logo"></i>
-  <i class="text"></i>
+{% block 'loaded' %}
 {% endblock %}

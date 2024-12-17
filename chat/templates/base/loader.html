@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'css/loader.css' %}">
+<script src="{% static 'js/loader.js' %}" async></script>
+{% endblock %}
+
+
+{% block 'main' %}
+<section class="loader">
+  <div>
+    <i class="logo"></i>
+    <i class="text"></i>
+    <i class="icon"></i>
+  </div>
+</section>
+{% block 'loaded' %}
+{% endblock %}
+{% endblock %}

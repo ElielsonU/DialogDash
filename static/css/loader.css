@@ -1,0 +1,29 @@
+.loader {
+  top: -50px;
+  left: 0;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: var(--brown);
+
+  .logo {
+    mask-size: contain;
+    mask-image: url(/static/imgs/logo.svg);
+    mask-repeat: no-repeat;
+    background-color: var(--white);
+    width: 75px;
+    height: 100px;
+  }
+
+  .text {
+    mask-size: contain;
+    mask-image: url(/static/imgs/dialog-dash.svg);
+    mask-repeat: no-repeat;
+    background-color: var(--white);
+    width: 200px;
+    height: 100px;
+  }
+}

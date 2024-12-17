@@ -11,7 +11,7 @@
   --black: #0e0e0e;
   --blue: #0032FC;
   --gray: #979797;
-  
+
   height: 100%;
 }
 
@@ -25,8 +25,8 @@ body {
   background-color: var(--light-gray);
   align-items: center;
   margin: 0;
-  
-  > * {
+
+  >* {
     width: inherit;
     max-width: 450px;
     border-left: 1px solid;
@@ -50,6 +50,7 @@ a:hover {
 .site-main {
   display: flex;
   flex-direction: column;
+  position: relative;
   align-items: center;
   background-color: var(--white);
   border-radius: 2px;
@@ -63,15 +64,15 @@ a:hover {
   align-items: center;
   background-color: var(--gray);
   height: 50px;
-  
-  > h2 {
+
+  >h2 {
     color: var(--white);
     font-size: 17px;
     font-family: var(--main-font);
     font-weight: 700;
   }
 
-  > a {
+  >a {
     color: var(--black);
     position: relative;
     padding-left: 20px;
@@ -79,7 +80,7 @@ a:hover {
     align-items: center;
   }
 
-  > a::after {
+  >a::after {
     content: '';
     display: block;
     border-bottom: 2.5px solid;

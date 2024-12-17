@@ -1,0 +1,20 @@
+.site-header, .site-main {
+  font-family: var(--monospaced-font);
+  justify-content: center;
+  background-color: var(--light-brown);
+  border: 0;
+  
+  * {
+    text-decoration: underline;
+    color: var(--white);
+  }
+}
+
+.site-main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 50px;
+}
