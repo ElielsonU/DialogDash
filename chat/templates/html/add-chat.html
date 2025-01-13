@@ -1,0 +1,23 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block 'head' %}
+  <link rel="stylesheet" href="{% static 'css/add-chat.css' %}">
+  <script src="{% static 'js/add-chat.js' %}" async></script>
+  <title>DialogDash - Adicionar Chat</title>
+{% endblock %}
+
+{% block 'header' %}
+  <a href="{% url 'chats' %}">Cancelar</a>
+  <h2>Adicionar Chat</h2>
+  <button id="add-chat">Salvar</button>
+{% endblock %}
+
+{% block 'main' %}
+  <form action="{% url 'add-chat' %}" method="post" id="add-chat-form">
+    {% csrf_token %}
+    <div class="inputs-field">
+       {{ form }}
+    </div>
+  </form>
+{% endblock %}

@@ -13,7 +13,7 @@ def login_view(request):
         user = models.User.objects.get(email=email)
         if user is not None and user.check_password(password):
             login(request, user)
-            return redirect('chat')
+            return redirect('chats')
         else:
             messages.error(request, 'Usuário ou senha inválidos.')
 
@@ -26,7 +26,7 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('chat')
+            return redirect('chats')
     return render(request, 'html/signup.html', { 'form': form })
 
 def logout_view(request):

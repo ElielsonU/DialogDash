@@ -13,7 +13,7 @@ class Chat(models.Model):
   }
   type = models.CharField(max_length=3, choices=CHAT_TYPES_CHOICE, blank=False, null=False)
   subject = models.CharField(max_length=50, blank=False, null=False)
-  description = models.TextField()
+  description = models.TextField(null=True, blank=False)
   max_size = models.IntegerField()
 
   def save(self, *args, **kwargs):

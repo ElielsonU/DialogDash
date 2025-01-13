@@ -1,9 +1,29 @@
-{% extends 'base/loader.html' %}
+{% extends 'base/loader.html' %} 
 {% load static %}
-
-{% block 'header' %}
-  <h2><a href="{% url 'user.logout' %}">Desconectar-se</a></h2>
-{% endblock %}
-
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+<title>DialogDash - Chats</title>
+{% endblock %} {% block 'header' %}
+<a href="{% url 'user.logout' %}"> Sair </a>
+<h2>Chats</h2>
+{% endblock %} 
 {% block 'loaded' %}
+<ul>
+  {% for chat in chats %}
+  <li>
+    <a href="#">
+      <div class="img"></div>
+      <span class="first-line">
+        <h3>{{ chat.subject }}</h3>
+        <span>12/12/2024</span>
+      </span>
+      <p>{{ chat.description }}</p>
+    </a>
+    <div class="arrow"></div>
+  </li>
+  {% endfor %}
+</ul>
+<a href="{% url 'add-chat' %}" class="add-chat">
+  <img src="{% static 'imgs/new-chat.png' %}" alt="add-chat">
+</a>
 {% endblock %}
