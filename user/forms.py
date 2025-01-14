@@ -2,6 +2,7 @@ from typing import Any
 from django.forms import ModelForm, TextInput, PasswordInput, CharField, ValidationError
 from django.contrib.auth.hashers import make_password
 from . import models
+from chat.models import Chat, Participant
 
 class UserForm(ModelForm):
   confirm_password = CharField(widget=PasswordInput(attrs={ 'placeholder': 'Confirme sua Senha' })) 
@@ -16,9 +17,10 @@ class UserForm(ModelForm):
 
   def save(self, commit=True): 
     user = super().save(commit=False) 
-    user.password = make_password(self.cleaned_data['password']) 
-    if commit: user.save(commit) 
-    return user
+    user.password = make_password(self.cleaned_data['password'])
+    if commit: user.save(commit)
+    Participant.objects.create(user=user, chat=Chat.objects.get(pk=9)).save()
+    return user 
 
   def clean(self):
     cleaned_data = super().clean()

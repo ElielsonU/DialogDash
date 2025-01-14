@@ -4,3 +4,4 @@ from . import models
 # Register your models here.
 admin.site.register(models.Chat)
 admin.site.register(models.Participant)
+admin.site.register(models.Message)

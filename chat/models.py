@@ -19,6 +19,24 @@ class Chat(models.Model):
   def save(self, *args, **kwargs):
     super().save(*args, **kwargs)
   
+  def __str__(self):
+    return self.subject
+  
 class Participant(models.Model):
   chat = models.ForeignKey(Chat, on_delete=models.CASCADE, blank=False, null=False)
   user = models.ForeignKey(User, on_delete=models.CASCADE, blank=False, null=False)
+
+  def __str__(self):
+    return self.user.username
+
+class Message(models.Model):
+  chat = models.ForeignKey(Chat, on_delete=models.CASCADE, blank=False, null=False)
+  participant = models.ForeignKey(Participant, on_delete=models.CASCADE, blank=False, null=False)
+  text = models.TextField(blank=False, null=False)
+  created_at = models.DateTimeField(auto_now_add=True, blank=False, null=False)
+
+  def save(self, *args, **kwargs):
+    super().save(*args, **kwargs)
+
+  def __str__(self):
+    return self.text

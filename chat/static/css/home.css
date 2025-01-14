@@ -71,6 +71,8 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    width: 100%;
+    max-width: 100%;
 
     .arrow {
       display: block;
@@ -91,7 +93,6 @@
 
     a {
       display: grid;
-      grid-template-rows: repeat(2, 1fr);
       grid-template-columns: 50px 1fr;
       padding: 10px;
       column-gap: 12px;
@@ -105,11 +106,18 @@
     .first-line {
       display: flex;
       justify-content: space-between;
-
+      width: 100%;
+      min-width: 100%;
+      max-width: min-content;
+      
       h3 {
         font-size: 16px;
         font-family: var(--main-font);
         font-weight: 700;
+        max-width: 220px;
+        display: inline-block;
+        text-overflow: ellipsis;
+        overflow: hidden;
       }
 
       span {
@@ -119,9 +127,19 @@
       }
     }
 
+    p {
+      grid-row: 2;
+      width: 100%;
+      max-width: 100%;
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
     .img {
       width: 50px;
       height: 50px;
+      max-width: 50px;
       border-radius: 50%;
       background-color: var(--gray);
       grid-row: 1/3;

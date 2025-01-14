@@ -6,13 +6,19 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  > button {
+
+  >.trashcan {
     background: none;
     padding: 0;
     border: 0;
     cursor: pointer;
+
     img {
       width: 30px;
+    }
+
+    &::after {
+      display: none;
     }
   }
 
@@ -28,6 +34,10 @@
       opacity: 0.7;
       font-family: var(--main-font);
       font-size: 15px;
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 400px;
     }
 
     .img {
@@ -39,7 +49,7 @@
       justify-self: center;
     }
   }
-  
+
   a::after {
     color: var(--light-blue);
     scale: 1.6;
@@ -48,6 +58,7 @@
 
 .site-main {
   background-color: var(--gray-brow);
+  max-height: calc(100% - 50px);
 
   .send-message {
     display: flex;
@@ -76,6 +87,45 @@
       border-radius: 5px;
       color: var(--white);
       cursor: pointer;
+    }
+  }
+}
+
+.messages {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  overflow: scroll;
+  padding: 10px;
+  padding-bottom: 66px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+
+  .message {
+    padding: 10px;
+    border-radius: 5px;
+    font-family: var(--main-font);
+  }
+
+  .sent {
+    align-self: flex-end;
+    max-width: 80%;
+    background-color: var(--light-brown);
+
+    > p {
+      margin: 0;
+    }
+  }
+
+  .received {
+    align-self: flex-start;
+    max-width: 80%;
+    background-color: var(--white);
+
+    > p {
+      margin: 0;
     }
   }
 }

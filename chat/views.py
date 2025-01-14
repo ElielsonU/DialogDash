@@ -1,12 +1,12 @@
 from django.shortcuts import redirect
 from django.shortcuts import render, HttpResponse
-from .models import Chat
+from .models import Chat, Message
 from .forms import ChatForm
 
 
 # Create your views here.
 def index(request):
-  search = request.GET.get('search')
+  search = request.GET.get('search', "")
   
   chats = Chat.objects.filter(participant__user=request.user)
   if (search):
@@ -44,7 +44,14 @@ def chat(request, id):
     return redirect('chats')
 
   context = {
-    'chat': Chat.objects.get(id=id)
+    'chat': Chat.objects.get(id=id),
+    'messages': Message.objects.filter(chat=chat)
   }
 
   return render(request, "html/chat.html", context=context)
+
+def delete_chat(request, id):
+  chat = Chat.objects.filter(id=id).first()
+  if (id != 9 and chat): 
+    chat.delete()
+  return redirect('chats')

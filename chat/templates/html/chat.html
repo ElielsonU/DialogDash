@@ -11,12 +11,25 @@
     <div class="img"></div>
     <h2>{{ chat.subject }}</h2>
   </div>
-  <button><img src="{% static 'imgs/excluir.png' %}" alt="lixeira"></button>
+  <a class="trashcan" href="{% url 'delete-chat' chat.id %}"><img src="{% static 'imgs/excluir.png' %}" alt="lixeira"></a>
 {% endblock %}
 
 {% block 'main' %}
+<section class="messages">
+  <audio id="notification" src="{% static 'audio/notification.mp3' %}"></audio>
+  {% for message in messages %}
+    <div class="message {% if message.participant.user == request.user %}sent{% else %}received{% endif %}">
+      <p>{{ message.text }}</p>
+    </div>
+    {% endfor %}
+  </section>
   <form class="send-message">
     <input type="text" placeholder="Mensagem..." />
     <button>Enviar</button>
   </form>
+  <script>
+    const chatId = "{{ chat.id }}";
+    const userId = "{{ request.user.id }}";
+  </script>
+  <script src="{% static 'js/chat.js' %}"></script>
 {% endblock %}
