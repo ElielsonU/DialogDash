@@ -10,7 +10,7 @@ def login_view(request):
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
-        user = models.User.objects.get(email=email)
+        user = models.User.objects.filter(email=email).first()
         if user is not None and user.check_password(password):
             login(request, user)
             return redirect('chats')
