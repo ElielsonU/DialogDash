@@ -16,7 +16,7 @@
   {% for chat in chats %}
   <li>
     <a href="{% url 'chat' chat.id %}">
-      <div class="img"></div>
+      <div class="img"><img src="{{ chat.image.url }}" ></div>
       <span class="first-line">
         <h3>{{ chat.subject }}</h3>
         <span>12/12/2024</span>

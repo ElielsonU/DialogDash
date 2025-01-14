@@ -15,6 +15,7 @@ class Chat(models.Model):
   subject = models.CharField(max_length=50, blank=False, null=False)
   description = models.TextField(null=True, blank=False)
   max_size = models.IntegerField()
+  image = models.ImageField(upload_to='images/', null=True, blank=True, default='images/default.png')
 
   def save(self, *args, **kwargs):
     super().save(*args, **kwargs)

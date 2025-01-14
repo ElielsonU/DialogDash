@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block 'main' %}
-  <form action="{% url 'add-chat' %}" method="post" id="add-chat-form">
+  <form action="{% url 'add-chat' %}" enctype="multipart/form-data" method="post" id="add-chat-form">
     {% csrf_token %}
     <div class="inputs-field">
        {{ form }}

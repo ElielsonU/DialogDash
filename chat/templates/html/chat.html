@@ -8,7 +8,7 @@
 {% block 'header' %}
   <a href="{% url 'chats' %}"></a>
   <div class="details">
-    <div class="img"></div>
+    <div class="img"><img src="{{ chat.image.url }}" ></div>
     <h2>{{ chat.subject }}</h2>
   </div>
   <a class="trashcan" href="{% url 'delete-chat' chat.id %}"><img src="{% static 'imgs/excluir.png' %}" alt="lixeira"></a>

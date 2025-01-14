@@ -22,7 +22,7 @@ def index(request):
 
 def add_chat(request):
   if request.method == "POST":
-    form = ChatForm(request.POST)
+    form = ChatForm(request.POST, request.FILES)
     if (form.is_valid()):
       form.creator = request.user
       try:

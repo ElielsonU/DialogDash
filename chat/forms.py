@@ -17,8 +17,8 @@ class ChatForm(forms.ModelForm):
         chat.max_size = 2
         chat.type = "CVS"
         contact = User.objects.filter(email=self.cleaned_data['email']).first()
-        if (not contact): 
-             raise Exception("Usuário não encontrado")
+        if (not contact or contact == self.creator): 
+             raise Exception("Usuário não encontrado ou ilegal")
 
         chat.save()
         Participant(chat=chat, user=contact).save()
@@ -26,10 +26,11 @@ class ChatForm(forms.ModelForm):
 
     class Meta:
         model = Chat
-        fields = ['subject', 'email', 'description']
+        fields = ['subject', 'email', 'description', 'image']
         labels = {
            'subject': 'Nome',
            'description': 'Descrição',
+           'image': 'Imagem',
         }
         widgets = {
             'subject': forms.TextInput(attrs={'class': 'form-control'}),
