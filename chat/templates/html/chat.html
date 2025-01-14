@@ -1,0 +1,22 @@
+{% extends 'base/loader.html' %} 
+{% load static %}
+
+{% block 'head' %}
+  <link rel="stylesheet" href="{% static 'css/chat.css' %}" />
+{% endblock %}
+
+{% block 'header' %}
+  <a href="{% url 'chats' %}"></a>
+  <div class="details">
+    <div class="img"></div>
+    <h2>{{ chat.subject }}</h2>
+  </div>
+  <button><img src="{% static 'imgs/excluir.png' %}" alt="lixeira"></button>
+{% endblock %}
+
+{% block 'main' %}
+  <form class="send-message">
+    <input type="text" placeholder="Mensagem..." />
+    <button>Enviar</button>
+  </form>
+{% endblock %}

@@ -8,10 +8,14 @@
 <h2>Chats</h2>
 {% endblock %} 
 {% block 'loaded' %}
+<form method="get" class="search" >
+  <input type="search" name="search" placeholder="Buscar" value="{{ search }}" />
+  <button><img src="{% static 'imgs/lupa.png' %}" alt="lupa"></button>
+</form>
 <ul>
   {% for chat in chats %}
   <li>
-    <a href="#">
+    <a href="{% url 'chat' chat.id %}">
       <div class="img"></div>
       <span class="first-line">
         <h3>{{ chat.subject }}</h3>

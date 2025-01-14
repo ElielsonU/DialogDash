@@ -17,7 +17,6 @@ class Chat(models.Model):
   max_size = models.IntegerField()
 
   def save(self, *args, **kwargs):
-    self.max_size = self.CHAT_SIZES_CHIOCES.get(self.type)
     super().save(*args, **kwargs)
   
 class Participant(models.Model):
